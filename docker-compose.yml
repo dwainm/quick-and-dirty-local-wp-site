@@ -1,4 +1,4 @@
-web:
+wordpress:
  image: wordpress
  links:
   - mysql
@@ -6,6 +6,8 @@ web:
   - WORDPRESS_DB_PASSWORD=password
  ports:
      - "8091:80"
+ volumes:
+     - ./wp-content:/var/www/html/wp-content
 mysql:
  image: mysql:5.7
  environment:
